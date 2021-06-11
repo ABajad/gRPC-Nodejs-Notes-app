@@ -14,6 +14,9 @@ test app : npm test
 usage : run scripts in client folder,
 
 Create a new note: node createNote.js 
+
 Receive all notes at once from server : node readNotes.js
+
 Receive notes in stream(one by one) : node readNotesStream.js
+
 Delete a note : node deleteNote.js
