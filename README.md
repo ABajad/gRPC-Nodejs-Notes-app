@@ -11,7 +11,8 @@ launch notes app server : npm start
 
 test app : npm test
 
-usage : run scripts in client folder,
+
+Usage : run scripts in client folder,
 
 Create a new note: node createNote.js 
 
