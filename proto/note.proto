@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package notePackage;
+
+service Note{
+    rpc createNote (NoteText) returns (NoteItem);
+    rpc readNotes (noParams) returns (NoteItems); 
+    rpc readNotesStream (noParams) returns (stream NoteItem);
+    rpc deleteNote (NoteId) returns (NoteId);
+    rpc droptable (noParams) returns (NoteText);
+}
+
+message noParams{}
+
+message NoteId{
+    int32 id = 1;
+}
+
+message NoteText{
+    string text = 1;
+}
+
+message NoteItem{
+    int32 id = 1;
+    string text = 2;
+}
+
+message NoteItems {
+    repeated NoteItem items = 1;
+}
