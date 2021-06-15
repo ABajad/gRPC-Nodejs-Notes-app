@@ -5,6 +5,8 @@
     "main": "server.js",
     "scripts": {
         "test": "cd ./test/ && node test.js",
+        "docker-stop": "docker rm pg pgadmin",
+        "docker-start": "docker run -p 5432:5432 --name pg -e POSTGRES_PASSWORD=password postgres && docker run -p 5555:80 --name pgadmin -e PGADMIN_DEFAULT_EMAIL=lavi@lavi.com -e PGADMIN_DEFAULT_PASSWORD=password dpage/pgadmin4",
         "start": "cd ./server/ && node createdb.js  && node ./server.js"
     },
     "keywords": [],
@@ -14,8 +16,12 @@
         "@grpc/proto-loader": "^0.6.2",
         "async": "^3.2.0",
         "chalk": "^4.1.1",
+        "express": "^4.17.1",
+        "express-graphql": "^0.12.0",
+        "graphql": "^15.5.0",
         "grpc": "^1.24.10",
         "pg": "^8.6.0",
-        "pgtools": "^0.3.2"
+        "pgtools": "^0.3.2",
+        "postgres": "^1.0.2"
     }
 }
